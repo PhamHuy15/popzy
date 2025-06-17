@@ -1,0 +1,18 @@
+{
+    "name": "popzy",
+    "version": "1.0.0",
+    "description": "",
+    "main": "popzy.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "minify": "terser popzy.js -o popzy.min.js && csso popzy.css -o popzy.min.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "csso-cli": "^4.0.2",
+        "terser": "^5.43.0"
+    }
+}
