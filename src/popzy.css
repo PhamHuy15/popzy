@@ -24,7 +24,7 @@
     background-color: #fff;
     width: min(600px, 90%);
     border-radius: 10px;
-    padding: 28px 28px 0 28px;
+    padding: 28px;
     transform: scale(0);
     transition: transform 0.3s ease;
 }
@@ -66,6 +66,6 @@
 .popzy__footer {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 0;
+    padding-top: 20px;
     gap: 20px;
 }
