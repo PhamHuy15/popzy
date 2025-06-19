@@ -25,9 +25,11 @@ function Popzy(options = {}) {
     this.opt = Object.assign(
         {
             closeMethods: ['button', 'overlay', 'escape'],
+            enableScrollLock: true,
             destroyOnClose: true,
             footer: false,
             cssClass: [],
+            scrollLockTarget: () => document.body,
         },
         options,
     );
@@ -152,8 +154,15 @@ Popzy.prototype.open = function () {
     }, 0);
 
     //disable scroll
-    document.body.classList.add('popzy--no-scroll');
-    document.body.style.paddingRight = this._getScrollbarWidth() + 'px';
+    if (this.opt.enableScrollLock) {
+        const target = this.opt.scrollLockTarget();
+        const targetPaddingRight = parseInt(getComputedStyle(target).paddingRight);
+
+        if (this._hasScrollbar(target)) {
+            target.classList.add('popzy--no-scroll');
+            target.style.paddingRight = targetPaddingRight + this._getScrollbarWidth() + 'px';
+        }
+    }
 
     if (this._allowOverlayClose) {
         this._backDrop.onclick = (e) => {
@@ -203,10 +212,14 @@ Popzy.prototype.close = function (destroy = this.opt.destroyOnClose) {
                 this._modalFooter = null;
             }
 
-            if (!Popzy.elements.length) {
-                //disable scroll
-                document.body.classList.remove('popzy--no-scroll');
-                document.body.style.paddingRight = '';
+            //disable scroll
+            if (this.opt.enableScrollLock && !Popzy.elements.length) {
+                const target = this.opt.scrollLockTarget();
+
+                if (this._hasScrollbar(target)) {
+                    target.classList.remove('popzy--no-scroll');
+                    target.style.paddingRight = '';
+                }
             }
 
             if (typeof this.opt.onClose === 'function') this.opt.onClose();
@@ -219,7 +232,17 @@ Popzy.prototype.destroy = function () {
     this.close(true);
 };
 
-//prototype
+Popzy.prototype._hasScrollbar = function (target) {
+    const htmlTag = document.documentElement;
+    const bodyTag = document.body;
+
+    if ([htmlTag, bodyTag].includes(target)) {
+        return htmlTag.scrollHeight > htmlTag.clientHeight || bodyTag.scrollHeight > bodyTag.clientHeight;
+    }
+
+    return target.scrollHeight > target.clientHeight;
+};
+
 Popzy.prototype._getScrollbarWidth = function () {
     if (this._scrollbarWidth) return this._scrollbarWidth;
 
