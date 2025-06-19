@@ -6,7 +6,6 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "minify": "terser src/popzy.js -o dist/popzy.min.js && csso src/popzy.css -o dist/popzy.min.css"
-        
     },
     "keywords": [],
     "author": "",
