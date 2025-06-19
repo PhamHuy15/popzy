@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./assets/highLight/style.css" media="all" />
         <link rel="stylesheet" href="./assets/style.css" media="all" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/phamhuy15/popzy/popzy.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/phamhuy15/popzy@v1.0.0/popzy.min.css" />
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     </head>
     <body>
@@ -19,7 +19,7 @@
             <div class="container">
                 <h1 class="header__title">Popzy.js</h1>
                 <div class="header__tagline">A lightweight and simple modal library built with pure JavaScript.</div>
-                <a href="https://github.com/sondnpt00343/popzy" class="header__github" target="_blank"
+                <a href="https://github.com/phamhuy15/popzy" class="header__github" target="_blank"
                     ><img src="./assets/github.svg" alt="View on GitHub"
                 /></a>
             </div>
@@ -31,7 +31,7 @@
             <h2 data-bullet="1" class="title" id="try-it-out">Try It Out</h2>
             <p>
                 Popzy is a lightweight <strong>modal library</strong> built with pure JavaScript. (<a
-                    href="https://github.com/sondnpt00343/popzy"
+                    href="https://github.com/phamhuy15/popzy"
                     >Source code available on GitHub</a
                 >)
             </p>
@@ -66,7 +66,7 @@
                 <tr>
                     <td>Direct Download</td>
                     <td>
-                        <a href="https://github.com/sondnpt00343/popzy/archive/master.zip" title="Download Popzy">
+                        <a href="https://github.com/phamhuy15/popzy/archive/master.zip" title="Download Popzy">
                             Download ZIP
                         </a>
                         <p>
@@ -85,13 +85,13 @@
 
             <pre
                 class="html"
-            ><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/sondnpt00343/popzy@v1.0.1/popzy.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+            ><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/phamhuy15/popzy/popzy.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 
             <p>Optionally, include the Popzy CSS file for default styling:</p>
 
             <pre class="html"><code>&lt;link
         rel=&quot;stylesheet&quot;
-        href=&quot;https://cdn.jsdelivr.net/gh/sondnpt00343/popzy@v1.0.1/popzy.min.css&quot;
+        href=&quot;https://cdn.jsdelivr.net/gh/phamhuy15/popzy/popzy.min.css&quot;
     &gt;</code></pre>
 
             <p>
@@ -101,7 +101,7 @@
 
             <blockquote>
                 You can use the
-                <a href="https://github.com/sondnpt00343/popzy/releases" target="_blank">released</a>
+                <a href="https://github.com/phamhuy15/popzy/releases" target="_blank">released</a>
                 versions of Popzy available here.
             </blockquote>
 
@@ -294,7 +294,7 @@
 
             <p>
                 For more details, you can view the full CSS file directly here:
-                <a href="https://github.com/sondnpt00343/popzy/blob/main/src/popzy.css" target="_blank">popzy.css</a>.
+                <a href="https://github.com/phamhuy15/popzy/blob/main/src/popzy.css" target="_blank">popzy.css</a>.
             </p>
 
             <!-- API section -->
@@ -350,11 +350,15 @@
 
         <!-- /CONTAINER -->
         <template id="modal-1">
-            <h1>hello</h1>
+            <h1>modal 1</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, iste reprehenderit nemo, ut
+                architecto
+            </p>
         </template>
 
         <script src="./assets/highLight/highLight.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/phamhuy15/popzy/popzy.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/phamhuy15/popzy@v1.0.0/popzy.min.js"></script>
         <script>
             // Highlight code
             hljs.initHighlightingOnLoad();
@@ -365,7 +369,7 @@
             const modal1 = new Popzy({
                 content: `
                     <h1>modal 1</h1>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, iste reprehenderit nemo, ut architecto</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, iste reprehenderit nemo, ut architecto</p>
                 `,
             });
 
