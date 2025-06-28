@@ -154,7 +154,7 @@ Popzy.prototype.open = function () {
     }, 0);
 
     //disable scroll
-    if (this.opt.enableScrollLock) {
+    if (Popzy.elements.length === 1 && this.opt.enableScrollLock) {
         const target = this.opt.scrollLockTarget();
         const targetPaddingRight = parseInt(getComputedStyle(target).paddingRight);
 
